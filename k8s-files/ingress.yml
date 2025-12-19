@@ -15,7 +15,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: main-service
+                name: shankar-service
                 port:
                   number: 80
           - path: /aws
