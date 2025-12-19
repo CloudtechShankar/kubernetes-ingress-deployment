@@ -2,18 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: main-deployment
-  labels: { app: main }
+  labels: { app: shankar }
 spec:
   replicas: 2
   selector:
-    matchLabels: { app: main }
+    matchLabels: { app: shankar }
   template:
     metadata:
-      labels: { app: main }
+      labels: { app: shankar }
     spec:
       containers:
-        - name: main
-          image: 211125606152.dkr.ecr.us-west-2.amazonaws.com/main:latest
+        - name: shankar
+          image: 058841532389.dkr.ecr.us-east-1.amazonaws.com/shankar:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -21,9 +21,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: main-service
+  name: shankar-service
 spec:
-  selector: { app: main }
+  selector: { app: shankar }
   ports:
     - port: 80
       targetPort: 80
